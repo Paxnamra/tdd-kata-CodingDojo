@@ -9,6 +9,12 @@ public class BowlingGameTest {
 
     @Test
     void shouldScoreOneWhenNoRolls() {
-        assertThat(bowlingGame.score()).isEqualTo(0);
+        assertThat(bowlingGame.getScore()).isEqualTo(0);
+    }
+
+    @Test
+    void shouldScoreOneWhenRolledOne() {
+        bowlingGame.roll(1);
+        assertThat(bowlingGame.getScore()).isEqualTo(1);
     }
 }
