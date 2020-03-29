@@ -21,31 +21,32 @@ public class BowlingGameTest {
 
     @Test
     void shouldScore0WhenNoPinDown20Times() {
-        roll(20, 0);
+        rollAll(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         assertThat(bowlingGame.getScore()).isEqualTo(0);
     }
 
     @Test
     void shouldScore20WhenPinDown20Times() {
-        roll(20, 1);
+        rollAll(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
         assertThat(bowlingGame.getScore()).isEqualTo(20);
     }
 
     @Test
     void shouldScoreSpare() {
-        roll(2, 5);
-        roll(1, 4);
-        roll(17, 0);
+        rollAll(5, 5, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         assertThat(bowlingGame.getScore()).isEqualTo(18);
     }
 
     @Test
     void shouldScoreStrike() {
-        roll(1, 10);
-        roll(2, 4);
-        roll(16, 0);
-
+        rollAll(10, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         assertThat(bowlingGame.getScore()).isEqualTo(26);
+    }
+
+    private void rollAll(int... pins) {
+        for (int pin : pins) {
+            bowlingGame.roll(pin);
+        }
     }
 
     private void roll(int throwsNumber, int pins) {
