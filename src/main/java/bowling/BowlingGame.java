@@ -10,6 +10,10 @@ public class BowlingGame {
         int cursor = 0;
 
         for (int i = 0; i < 10; i++) {
+            if (rolls[cursor] == 10) {
+                score += 10 + rolls[cursor + 1 ] + rolls[cursor + 2];
+                cursor++;
+            }
             if (isSpare(cursor)) {
                 score += 10 + rolls[cursor + 2];
                 cursor += 2;

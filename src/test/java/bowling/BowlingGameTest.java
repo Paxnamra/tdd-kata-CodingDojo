@@ -39,6 +39,15 @@ public class BowlingGameTest {
         assertThat(bowlingGame.getScore()).isEqualTo(18);
     }
 
+    @Test
+    void shouldScoreStrike() {
+        roll(1, 10);
+        roll(2, 4);
+        roll(16, 0);
+
+        assertThat(bowlingGame.getScore()).isEqualTo(26);
+    }
+
     private void roll(int throwsNumber, int pins) {
         for (int i = 0; i < throwsNumber; i++) {
             bowlingGame.roll(pins);
