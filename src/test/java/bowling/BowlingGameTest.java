@@ -43,15 +43,15 @@ public class BowlingGameTest {
         assertThat(bowlingGame.getScore()).isEqualTo(26);
     }
 
+    @Test
+    void shouldStrikeMasterStrike() {
+        rollAll(10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10);
+        assertThat(bowlingGame.getScore()).isEqualTo(300);
+    }
+
     private void rollAll(int... pins) {
         for (int pin : pins) {
             bowlingGame.roll(pin);
-        }
-    }
-
-    private void roll(int throwsNumber, int pins) {
-        for (int i = 0; i < throwsNumber; i++) {
-            bowlingGame.roll(pins);
         }
     }
 }
