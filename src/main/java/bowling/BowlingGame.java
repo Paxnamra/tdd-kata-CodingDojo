@@ -3,7 +3,7 @@ package bowling;
 public class BowlingGame {
 
     private int rollMark = 0;
-    private int rolls[] = new int[21];
+    private int[] rolls = new int[21];
 
     public int getScore() {
         int score = 0;
