@@ -7,6 +7,9 @@ class CalculatorTest {
 
     @Test
     void shouldReturnZeroWhenGotEmptyString() {
-        assertThat(true).isEqualTo(true);
+        Calculator calculator = new Calculator();
+
+        int result = calculator.add("");
+        assertThat(result).isEqualTo(0);
     }
 }
