@@ -1,6 +1,7 @@
 package string_calculator;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.in;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,5 +25,11 @@ class CalculatorTest {
     void shouldReturnNumberWhenGivenNumber() {
         int result = calculator.add("1");
         assertThat(result).isEqualTo(1);
+    }
+
+    @Test
+    void shouldAddTwoNumbersSeparatedWithComma() {
+        int result = calculator.add("1,2");
+        assertThat(result).isEqualTo(3);
     }
 }
