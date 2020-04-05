@@ -6,11 +6,20 @@ public class Calculator {
             return 0;
         }
 
-        if (input.matches("[0-9]")) {
+        if (isSingleNumber(input)) {
             return Integer.parseInt(input);
         }
 
         String[] numbersString = input.split("\\,");
-        return Integer.parseInt(numbersString[0]) + Integer.parseInt(numbersString[1]);
+
+        int result = 0;
+        for (String number : numbersString) {
+            result += Integer.parseInt(number);
+        }
+        return result;
+    }
+
+    private boolean isSingleNumber(String input) {
+        return input.matches("[0-9]");
     }
 }
