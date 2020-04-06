@@ -51,4 +51,12 @@ class CalculatorTest {
             calculator.add("-1");
         });
     }
+
+    @Test
+    void shouldIncludeAllNegativeNumbersInExceptionMessage() {
+        NegativeNumberException exception = Assertions.assertThrows(NegativeNumberException.class, () -> {
+            calculator.add("-1,-2");
+        });
+        assertThat(exception.getMessage()).isEqualTo("Negatives: -1 -2");
+    }
 }
