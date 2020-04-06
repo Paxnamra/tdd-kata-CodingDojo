@@ -1,10 +1,9 @@
 package string_calculator;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class CalculatorTest {
 
@@ -37,5 +36,11 @@ class CalculatorTest {
     void shouldAddThreeNumbersSeparatedWithComma() {
         int result = calculator.add("1,2,3");
         assertThat(result).isEqualTo(6);
+    }
+
+    @Test
+    void shouldAddThreeNumbersSeparatedWithCommaAndNewLine() {
+        int result = calculator.add("1,2\n4");
+        assertThat(result).isEqualTo(7);
     }
 }
