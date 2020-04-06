@@ -10,6 +10,9 @@ public class Calculator {
 
         int result = 0;
         for (String number : numbersString) {
+            if (Integer.parseInt(number) < 0) {
+                throw new NegativeNumberException();
+            }
             result += Integer.parseInt(number);
         }
         return result;
