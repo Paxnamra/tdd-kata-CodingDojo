@@ -8,7 +8,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class NameInverterTest {
 
-    public static final String EMPTY_STRING = "";
+    private static final String EMPTY_STRING = "";
     private NameInverter nameInverter;
 
     @BeforeEach
@@ -18,9 +18,7 @@ public class NameInverterTest {
 
     @Test
     void shouldThrowExceptionWhenNullProvided() {
-        Assertions.assertThrows(NullPointerException.class, () -> {
-            nameInverter.invert(null);
-        });
+        Assertions.assertThrows(NullPointerException.class, () -> nameInverter.invert(null));
     }
 
     @Test
