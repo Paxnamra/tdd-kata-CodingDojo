@@ -33,9 +33,15 @@ public class NameInverterTest {
     }
 
     @Test
-    void shouldReturnInvertedFirstAndLastName() {
+    void shouldReturnInvertedFirstAndLastNameMale() {
         String inverted = nameInverter.invert("Jan Kowalski");
         assertThat(inverted).isEqualTo("Kowalski, Jan");
+    }
+
+    @Test
+    void shouldReturnInvertedFirstAndLastNameFemale() {
+        String inverted = nameInverter.invert("Janina Kowalska");
+        assertThat(inverted).isEqualTo("Kowalska, Janina");
     }
 
     @Test
