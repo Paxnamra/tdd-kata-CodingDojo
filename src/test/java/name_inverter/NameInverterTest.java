@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class NameInverterTest {
-
     private static final String EMPTY_STRING = "";
     private NameInverter nameInverter;
 
@@ -31,5 +30,11 @@ public class NameInverterTest {
     void shouldReturnEmptyStringWhenSpacesGiven() {
         String inverted = nameInverter.invert("  ");
         assertThat(inverted).isEqualTo(EMPTY_STRING);
+    }
+
+    @Test
+    void shouldReturnInvertedFirstAndLastName() {
+        String inverted = nameInverter.invert("Jan Kowalski");
+        assertThat(inverted).isEqualTo("Kowalski, Jan");
     }
 }
