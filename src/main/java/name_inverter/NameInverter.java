@@ -1,8 +1,9 @@
 package name_inverter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class NameInverter {
     public String invert(String name) {
@@ -22,7 +23,9 @@ class StringHelper {
 
     public static String createInvertedString(List<String> splitName) {
         splitName.removeIf(n -> Arrays.asList("Pan", "Pani").contains(n));
-        return String.format("%s, %s", splitName.get(1), splitName.get(0));
+        Collections.reverse(splitName);
+
+        return String.join(", ", splitName);
     }
 
     public static boolean isEmptyOrSpaces(String name) {

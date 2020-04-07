@@ -55,4 +55,11 @@ public class NameInverterTest {
         String inverted = nameInverter.invert("Pani Janina Kowalska");
         assertThat(inverted).isEqualTo("Kowalska, Janina");
     }
+
+    @Test
+    void shouldReturnInvertedFirstLastNameWithTitleWithoutHonorificFemale() {
+        String inverted = nameInverter.invert("Pani Dr Janina Kowalska");
+        assertThat(inverted).isEqualTo("Kowalska, Janina, Dr");
+    }
+
 }
