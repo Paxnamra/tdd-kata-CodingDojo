@@ -1,12 +1,12 @@
 package name_inverter;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
-public class NameInverter {
-    public String invert(String name) {
+class NameInverter {
+    String invert(String name) {
         if (StringHelper.isEmptyOrSpaces(name)) {
             return "";
         }
@@ -21,14 +21,14 @@ public class NameInverter {
 
 class StringHelper {
 
-    public static String createInvertedString(List<String> splitName) {
+    static String createInvertedString(List<String> splitName) {
         splitName.removeIf(n -> Arrays.asList("Pan", "Pani").contains(n));
         Collections.reverse(splitName);
 
         return String.join(", ", splitName);
     }
 
-    public static boolean isEmptyOrSpaces(String name) {
+    static boolean isEmptyOrSpaces(String name) {
         return name.trim().isEmpty();
     }
 }

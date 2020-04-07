@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class NameInverterTest {
+class NameInverterTest {
     private static final String EMPTY_STRING = "";
     private NameInverter nameInverter;
 
