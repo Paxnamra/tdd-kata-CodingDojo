@@ -1,11 +1,17 @@
 package tennis;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TennisGameTest {
 
-    TennisGame game = new TennisGame();
+    private TennisGame game;
+
+    @BeforeEach
+    void setUp() {
+        game = new TennisGame();
+    }
 
     @Test
     void gameShouldStartWithZeroScore() {
