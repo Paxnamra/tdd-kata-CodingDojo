@@ -17,4 +17,10 @@ class TennisGameTest {
     void gameShouldStartWithZeroScore() {
         Assertions.assertThat(game.getScore()).isEqualTo("Love all");
     }
+
+    @Test
+    void gameShouldReturnScoreAfterFirstPoints() {
+        game.playerOneScored();
+        Assertions.assertThat(game.getScore()).isEqualTo("Fifteen, Love");
+    }
 }
