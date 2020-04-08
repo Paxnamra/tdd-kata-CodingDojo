@@ -9,6 +9,6 @@ class TennisGameTest {
 
     @Test
     void gameShouldStartWithZeroScore() {
-        Assertions.assertThat(game.getScore()).isEqualTo("0 0");
+        Assertions.assertThat(game.getScore()).isEqualTo("Love all");
     }
 }
