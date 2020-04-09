@@ -31,9 +31,17 @@ class TennisGameTest {
     }
 
     @Test
-    void gameShouldReturnScoreAfteNextPointsOfPlayerTwo() {
+    void gameShouldReturnScoreAfterPlayerTwoScoresTwice() {
         game.playerTwoScored();
         game.playerTwoScored();
         Assertions.assertThat(game.getScore()).isEqualTo("Love, Thirty");
+    }
+
+    @Test
+    void gameShouldReturnScoreAfterPlayerTwoScoresTriple() {
+        game.playerTwoScored();
+        game.playerTwoScored();
+        game.playerTwoScored();
+        Assertions.assertThat(game.getScore()).isEqualTo("Love, Forty");
     }
 }

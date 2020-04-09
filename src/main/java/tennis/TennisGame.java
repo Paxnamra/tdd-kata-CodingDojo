@@ -29,6 +29,8 @@ public class TennisGame {
                 return "Fifteen";
             case 2:
                 return "Thirty";
+            case 3:
+                return "Forty";
             default:
                 return "";
         }
