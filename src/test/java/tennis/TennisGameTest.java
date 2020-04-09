@@ -19,8 +19,14 @@ class TennisGameTest {
     }
 
     @Test
-    void gameShouldReturnScoreAfterFirstPoints() {
+    void gameShouldReturnScoreAfterFirstPointsPlayerOne() {
         game.playerOneScored();
         Assertions.assertThat(game.getScore()).isEqualTo("Fifteen, Love");
+    }
+
+    @Test
+    void gameShouldReturnScoreAfterFirstPointsPlayerTwo() {
+        game.playerTwoScored();
+        Assertions.assertThat(game.getScore()).isEqualTo("Love, Fifteen");
     }
 }
