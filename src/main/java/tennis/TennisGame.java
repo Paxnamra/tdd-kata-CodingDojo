@@ -1,8 +1,8 @@
 package tennis;
 
 public class TennisGame {
-
     private int playerOneScore = 0;
+
     private int playerTwoScore = 0;
 
     private String playerOneName = "Radwańska";
@@ -17,10 +17,10 @@ public class TennisGame {
             if (isAdvantagePlayerOne()) {
                 return "Advantage " + playerTwoName;
             }
-            if (playerOneScore - playerTwoScore == 2) {
+            if (playerOneWonAfterAdvantage()) {
                 return "Game won by " + playerOneName;
             }
-            if (playerTwoScore - playerOneScore  == 2) {
+            if (playerTwoWonAfterAdvantage()) {
                 return "Game won by " + playerTwoName;
             }
             return "Advantage " + playerOneName;
@@ -37,6 +37,14 @@ public class TennisGame {
         return "Love all";
     }
 
+    public void playerOneScored() {
+        playerOneScore++;
+    }
+
+    public void playerTwoScored() {
+        playerTwoScore++;
+    }
+
     private boolean isDeuce() {
         return playerOneScore == 3 && playerTwoScore == playerOneScore;
     }
@@ -49,16 +57,16 @@ public class TennisGame {
         return playerTwoScore - playerOneScore == 1;
     }
 
+    private boolean playerOneWonAfterAdvantage() {
+        return playerOneScore - playerTwoScore == 2;
+    }
+
+    private boolean playerTwoWonAfterAdvantage() {
+        return playerTwoScore - playerOneScore  == 2;
+    }
+
     private String buildResultString() {
         return getScoreString(playerOneScore) + ", " + getScoreString(playerTwoScore);
-    }
-
-    public void playerOneScored() {
-        playerOneScore++;
-    }
-
-    public void playerTwoScored() {
-        playerTwoScore++;
     }
 
     private String getScoreString(int score) {
