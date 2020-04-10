@@ -6,6 +6,9 @@ public class TennisGame {
     private int playerTwoScore = 0;
 
     public String getScore() {
+        if (playerOneScore > 3) {
+            return "Game won by Radwańska";
+        }
         String scoreString = getScoreString(playerOneScore) + ", " + getScoreString(playerTwoScore);
         if (playerOneScore > 0 || playerTwoScore > 0) {
             return scoreString;

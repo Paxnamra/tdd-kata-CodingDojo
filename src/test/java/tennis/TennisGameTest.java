@@ -52,4 +52,12 @@ class TennisGameTest {
         game.playerTwoScored();
         Assertions.assertThat(game.getScore()).isEqualTo("Fifteen, Forty");
     }
+    @Test
+    void gameShouldEndAfterPlayerOneScoresFourTimes() {
+        game.playerOneScored();
+        game.playerOneScored();
+        game.playerOneScored();
+        game.playerOneScored();
+        Assertions.assertThat(game.getScore()).isEqualTo("Game won by Radwańska");
+    }
 }
