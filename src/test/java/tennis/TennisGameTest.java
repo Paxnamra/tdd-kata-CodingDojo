@@ -72,24 +72,23 @@ class TennisGameTest {
 
     @Test
     void gameShouldBeDeuceAfterEachPlayerScoresThreeTimes() {
-        game.playerTwoScored();
-        game.playerTwoScored();
-        game.playerTwoScored();
-        game.playerOneScored();
-        game.playerOneScored();
-        game.playerOneScored();
+        generateDeuce();
         Assertions.assertThat(game.getScore()).isEqualTo("Deuce");
     }
 
     @Test
-    void gameShouldBeInAdvantageWhenOnlyOnePointAfterDeuceIsScorede() {
-        game.playerTwoScored();
+    void gameShouldBeInAdvantageForPlayerWhenOnlyOnePointAfterDeuceIsScored() {
+        game.playerOneScored();
+        generateDeuce();
+        Assertions.assertThat(game.getScore()).isEqualTo("Advantage Radwańska");
+    }
+
+    private void generateDeuce() {
         game.playerTwoScored();
         game.playerTwoScored();
         game.playerTwoScored();
         game.playerOneScored();
         game.playerOneScored();
         game.playerOneScored();
-        Assertions.assertThat(game.getScore()).isEqualTo("Advantage Janowicz");
     }
 }

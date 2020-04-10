@@ -13,10 +13,11 @@ public class TennisGame {
             return "Deuce";
         }
 
-        if (playerOneScore >= 3 && playerTwoScore >= 3) {
-            if (playerTwoScore - playerOneScore == 1) {
-                return "Advantage Janowicz";
+        if (isAfterDeuce()) {
+            if (isAdvantagePlayerOne()) {
+                return "Advantage " + playerTwoName;
             }
+            return "Advantage " + playerOneName;
         }
 
         if (playerOneScore > 3) {
@@ -30,12 +31,20 @@ public class TennisGame {
         return "Love all";
     }
 
-    private String buildResultString() {
-        return getScoreString(playerOneScore) + ", " + getScoreString(playerTwoScore);
-    }
-
     private boolean isDeuce() {
         return playerOneScore == 3 && playerTwoScore == playerOneScore;
+    }
+
+    private boolean isAfterDeuce() {
+        return playerOneScore >= 3 && playerTwoScore >= 3;
+    }
+
+    private boolean isAdvantagePlayerOne() {
+        return playerTwoScore - playerOneScore == 1;
+    }
+
+    private String buildResultString() {
+        return getScoreString(playerOneScore) + ", " + getScoreString(playerTwoScore);
     }
 
     public void playerOneScored() {
