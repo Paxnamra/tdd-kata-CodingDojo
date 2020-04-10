@@ -8,6 +8,8 @@ public class TennisGame {
     public String getScore() {
         if (playerOneScore > 3) {
             return "Game won by Radwańska";
+        } else if (playerTwoScore > 3){
+            return "Game won by Janowicz";
         }
         String scoreString = getScoreString(playerOneScore) + ", " + getScoreString(playerTwoScore);
         if (playerOneScore > 0 || playerTwoScore > 0) {
