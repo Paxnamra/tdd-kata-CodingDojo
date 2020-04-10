@@ -80,4 +80,16 @@ class TennisGameTest {
         game.playerOneScored();
         Assertions.assertThat(game.getScore()).isEqualTo("Deuce");
     }
+
+    @Test
+    void gameShouldBeInAdvantageWhenOnlyOnePointAfterDeuceIsScorede() {
+        game.playerTwoScored();
+        game.playerTwoScored();
+        game.playerTwoScored();
+        game.playerTwoScored();
+        game.playerOneScored();
+        game.playerOneScored();
+        game.playerOneScored();
+        Assertions.assertThat(game.getScore()).isEqualTo("Advantage Janowicz");
+    }
 }

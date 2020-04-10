@@ -12,6 +12,13 @@ public class TennisGame {
         if (isDeuce()) {
             return "Deuce";
         }
+
+        if (playerOneScore >= 3 && playerTwoScore >= 3) {
+            if (playerTwoScore - playerOneScore == 1) {
+                return "Advantage Janowicz";
+            }
+        }
+
         if (playerOneScore > 3) {
             return "Game won by " + playerOneName;
         } else if (playerTwoScore > 3){
