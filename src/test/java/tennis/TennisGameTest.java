@@ -69,4 +69,15 @@ class TennisGameTest {
         game.playerTwoScored();
         Assertions.assertThat(game.getScore()).isEqualTo("Game won by Janowicz");
     }
+
+    @Test
+    void gameShouldBeDeuceAfterEachPlayerScoresThreeTimes() {
+        game.playerTwoScored();
+        game.playerTwoScored();
+        game.playerTwoScored();
+        game.playerOneScored();
+        game.playerOneScored();
+        game.playerOneScored();
+        Assertions.assertThat(game.getScore()).isEqualTo("Deuce");
+    }
 }

@@ -9,6 +9,9 @@ public class TennisGame {
     private String playerTwoName = "Janowicz";
 
     public String getScore() {
+        if (playerOneScore == 3 && playerTwoScore == playerOneScore) {
+            return "Deuce";
+        }
         if (playerOneScore > 3) {
             return "Game won by " + playerOneName;
         } else if (playerTwoScore > 3){
