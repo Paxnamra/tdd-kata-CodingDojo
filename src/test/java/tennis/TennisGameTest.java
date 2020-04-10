@@ -44,4 +44,12 @@ class TennisGameTest {
         game.playerTwoScored();
         Assertions.assertThat(game.getScore()).isEqualTo("Love, Forty");
     }
+    @Test
+    void gameShouldReturnScoreAfterPlayerOneScoresOnceAndPlayerTwoScoresThreeTimes() {
+        game.playerOneScored();
+        game.playerTwoScored();
+        game.playerTwoScored();
+        game.playerTwoScored();
+        Assertions.assertThat(game.getScore()).isEqualTo("Fifteen, Forty");
+    }
 }
