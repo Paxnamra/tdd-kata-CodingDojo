@@ -9,7 +9,7 @@ public class TennisGame {
     private String playerTwoName = "Janowicz";
 
     public String getScore() {
-        if (playerOneScore == 3 && playerTwoScore == playerOneScore) {
+        if (isDeuce()) {
             return "Deuce";
         }
         if (playerOneScore > 3) {
@@ -17,11 +17,18 @@ public class TennisGame {
         } else if (playerTwoScore > 3){
             return "Game won by " + playerTwoName;
         }
-        String scoreString = getScoreString(playerOneScore) + ", " + getScoreString(playerTwoScore);
         if (playerOneScore > 0 || playerTwoScore > 0) {
-            return scoreString;
+            return buildResultString();
         }
         return "Love all";
+    }
+
+    private String buildResultString() {
+        return getScoreString(playerOneScore) + ", " + getScoreString(playerTwoScore);
+    }
+
+    private boolean isDeuce() {
+        return playerOneScore == 3 && playerTwoScore == playerOneScore;
     }
 
     public void playerOneScored() {
