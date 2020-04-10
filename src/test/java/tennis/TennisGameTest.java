@@ -91,6 +91,14 @@ class TennisGameTest {
         Assertions.assertThat(game.getScore()).isEqualTo("Game won by Radwańska");
     }
 
+    @Test
+    void gameShouldBeWonByPlayerTwoByOnePointScoredAfterAdvantage() {
+        generateDeuce();
+        game.playerTwoScored();
+        game.playerTwoScored();
+        Assertions.assertThat(game.getScore()).isEqualTo("Game won by Janowicz");
+    }
+
     private void generateDeuce() {
         game.playerTwoScored();
         game.playerTwoScored();

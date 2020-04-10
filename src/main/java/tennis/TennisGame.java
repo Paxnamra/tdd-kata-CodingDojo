@@ -20,6 +20,9 @@ public class TennisGame {
             if (playerOneScore - playerTwoScore == 2) {
                 return "Game won by " + playerOneName;
             }
+            if (playerTwoScore - playerOneScore  == 2) {
+                return "Game won by " + playerTwoName;
+            }
             return "Advantage " + playerOneName;
         }
 
