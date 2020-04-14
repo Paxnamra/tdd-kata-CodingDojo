@@ -5,9 +5,12 @@ import org.junit.jupiter.api.Test;
 
 class ScanMachineTest {
 
+    private ScanningMachine scanningMachine = new ScanningMachine();
+
     @Test
-    void shouldSetTestGreen() {
-        assertThat(true).isEqualTo(true); //green-green test start
+    void should_Print_Empty_String_When_No_Digits_Given() {
+        scanningMachine.printInput();
+        assertThat(scanningMachine.printInput()).isEqualTo("");
     }
 
 }
