@@ -9,8 +9,16 @@ class ScanMachineTest {
 
     @Test
     void should_Print_Empty_String_When_No_Digits_Given() {
-        scanningMachine.printInput();
-        assertThat(scanningMachine.printInput()).isEqualTo("");
+        scanningMachine.printInput(0);
+        assertThat(scanningMachine.printInput(0)).isEqualTo("");
     }
 
+    @Test
+    void should_Print_String_Digit_One() {
+        scanningMachine.printInput(1);
+        assertThat(scanningMachine.printInput(1)).isEqualTo("   " +
+                                                           " | " +
+                                                           " | ");
+    }
 }
+

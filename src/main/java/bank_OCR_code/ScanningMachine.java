@@ -2,7 +2,13 @@ package bank_OCR_code;
 
 public class ScanningMachine {
 
-    public String printInput() {
-    return "";
+    private String digitOne = "   " + " | " + " | ";
+
+    public String printInput(int number) {
+        if (number == 1) {
+            return digitOne;
+        }
+        return "";
     }
 }
+
