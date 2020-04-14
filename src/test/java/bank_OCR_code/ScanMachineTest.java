@@ -18,7 +18,8 @@ class ScanMachineTest {
     @Test
     void should_Print_String_Digit_Zero() {
         scanningMachine.printInput("0");
-        assertThat(scanningMachine.printInput("0")).isEqualTo(" _ " +
+        assertThat(scanningMachine.printInput("0")).isEqualTo(
+                " _ " +
                 "| |" +
                 "|_|");
     }
@@ -26,9 +27,19 @@ class ScanMachineTest {
     @Test
     void should_Print_String_Digit_One() {
         scanningMachine.printInput("1");
-        assertThat(scanningMachine.printInput("1")).isEqualTo("   " +
-                                                           " | " +
-                                                           " | ");
+        assertThat(scanningMachine.printInput("1")).isEqualTo(
+                "   " +
+                " | " +
+                " | ");
+    }
+
+    @Test
+    void should_Print_String_Digit_Two() {
+        scanningMachine.printInput("2");
+        assertThat(scanningMachine.printInput("2")).isEqualTo(
+                " __" +
+                 "__|" +
+                "|__");
     }
 }
 
