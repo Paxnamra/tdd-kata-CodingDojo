@@ -19,8 +19,8 @@ class ScanMachineTest {
         scanningMachine.printInput("0");
         assertThat(scanningMachine.printInput("0")).isEqualTo(
                 " _ " +
-                "\n| |" +
-                "\n|_|");
+                        "\n| |" +
+                        "\n|_|");
     }
 
     @Test
@@ -28,8 +28,8 @@ class ScanMachineTest {
         scanningMachine.printInput("1");
         assertThat(scanningMachine.printInput("1")).isEqualTo(
                 "   " +
-                "\n| " +
-                "\n| ");
+                        "\n| " +
+                        "\n| ");
     }
 
     @Test
@@ -37,8 +37,8 @@ class ScanMachineTest {
         scanningMachine.printInput("2");
         assertThat(scanningMachine.printInput("2")).isEqualTo(
                 "__ " +
-                "\n__|" +
-                "\n|__");
+                        "\n__|" +
+                        "\n|__");
     }
 
     @Test
@@ -46,8 +46,17 @@ class ScanMachineTest {
         scanningMachine.printInput("3");
         assertThat(scanningMachine.printInput("3")).isEqualTo(
                 " __" +
-                "\n__|" +
-                "\n__|");
+                        "\n__|" +
+                        "\n__|");
+    }
+
+    @Test
+    void should_Print_String_TwoDigits_Twelve() {
+        scanningMachine.printInput("12");
+        assertThat(scanningMachine.printInput("12")).isEqualTo(
+                 "   " + "__ " +
+          "\n" + " | " + "__|" +
+          "\n" + " | " + "|__");
     }
 }
 
