@@ -1,9 +1,8 @@
 package bank_OCR_code;
 
-import static org.assertj.core.api.Assertions.*;
-
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 class ScanMachineTest {
 
@@ -20,8 +19,8 @@ class ScanMachineTest {
         scanningMachine.printInput("0");
         assertThat(scanningMachine.printInput("0")).isEqualTo(
                 " _ " +
-                "| |" +
-                "|_|");
+                "\n| |" +
+                "\n|_|");
     }
 
     @Test
@@ -29,17 +28,17 @@ class ScanMachineTest {
         scanningMachine.printInput("1");
         assertThat(scanningMachine.printInput("1")).isEqualTo(
                 "   " +
-                " | " +
-                " | ");
+                "\n| " +
+                "\n| ");
     }
 
     @Test
     void should_Print_String_Digit_Two() {
         scanningMachine.printInput("2");
         assertThat(scanningMachine.printInput("2")).isEqualTo(
-                " __" +
-                 "__|" +
-                "|__");
+                "__ " +
+                "\n__|" +
+                "\n|__");
     }
 }
 

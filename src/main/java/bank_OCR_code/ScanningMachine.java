@@ -1,10 +1,12 @@
 package bank_OCR_code;
 
+import java.util.Arrays;
+
 public class ScanningMachine {
 
-    private String digitZero = " _ " + "| |" + "|_|";
-    private String digitOne = "   " + " | " + " | ";
-    private String digitTwo = " __" + "__|" + "|__";
+    private String digitZero = " _ " + "\n| |" + "\n|_|";
+    private String digitOne = "   " + "\n| " + "\n| ";
+    private String digitTwo = "__ " + "\n__|" + "\n|__";
 
     public String printInput(String number) {
 
