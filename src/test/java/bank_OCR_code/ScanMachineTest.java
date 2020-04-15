@@ -40,5 +40,14 @@ class ScanMachineTest {
                 "\n__|" +
                 "\n|__");
     }
+
+    @Test
+    void should_Print_String_Digit_Three() {
+        scanningMachine.printInput("3");
+        assertThat(scanningMachine.printInput("3")).isEqualTo(
+                " __" +
+                "\n__|" +
+                "\n__|");
+    }
 }
 
