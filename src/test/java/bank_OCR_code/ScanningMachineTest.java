@@ -1,21 +1,26 @@
 package bank_OCR_code;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
-class ScanMachineTest {
+class ScanningMachineTest {
 
-    private ScanningMachine scanningMachine = new ScanningMachine();
+    private ScanningMachine scanningMachine;
+
+    @BeforeEach
+    void setup() {
+        scanningMachine = new ScanningMachine();
+    }
 
     @Test
-    void should_Print_Empty_String_When_No_Digits_Given() {
+    void printInput_emptyString_returnEmptyString() {
         scanningMachine.printInput("");
         assertThat(scanningMachine.printInput("")).isEqualTo("");
     }
 
     @Test
-    void should_Print_String_Digit_Zero() {
+    void printInput_integerZero_stringSingleDigitZeroCode() {
         scanningMachine.printInput("0");
         assertThat(scanningMachine.printInput("0")).isEqualTo(
                 " _ " +
@@ -24,7 +29,7 @@ class ScanMachineTest {
     }
 
     @Test
-    void should_Print_String_Digit_One() {
+    void printInput_integerOne_stringSingleDigitOneCode() {
         scanningMachine.printInput("1");
         assertThat(scanningMachine.printInput("1")).isEqualTo(
                 "   " +
@@ -33,7 +38,7 @@ class ScanMachineTest {
     }
 
     @Test
-    void should_Print_String_Digit_Two() {
+    void printInput_integerTwo_stringSingleDigitTwoCode() {
         scanningMachine.printInput("2");
         assertThat(scanningMachine.printInput("2")).isEqualTo(
                 "__ " +
@@ -42,7 +47,7 @@ class ScanMachineTest {
     }
 
     @Test
-    void should_Print_String_Digit_Three() {
+    void printInput_integerThree_stringSingleDigitThreeCode() {
         scanningMachine.printInput("3");
         assertThat(scanningMachine.printInput("3")).isEqualTo(
                 " __" +
@@ -51,7 +56,7 @@ class ScanMachineTest {
     }
 
     @Test
-    void should_Print_String_TwoDigits_Twelve() {
+    void printInput_integerTwelve_stringMultiDigitTwelveCode() {
         scanningMachine.printInput("12");
         assertThat(scanningMachine.printInput("12")).isEqualTo(
                  "   " + "__ " +
